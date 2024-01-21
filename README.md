@@ -5,10 +5,6 @@ https://dropbox3dot0.web.app/
 
 This project facilitates decentralized image upload and sharing on the blockchain using Solidity for the smart contract and React for the front-end interface. It enables users to securely upload images to IPFS (InterPlanetary File System) and share access with specified users through smart contract functionality.
 
-Here is the video in English - [Decentralize Google Drive](https://youtu.be/M-KRLlHG_zs?si=rD7I-fH-P8kGiwwf)
-
-Here is the video in Hindi - [Decentralize Google Drive](https://youtu.be/fghqq3-P3x0?si=CVMpHFTW3-fa3R3A)
-
 ## Features
 
 - **Decentralized Storage:** Images are uploaded to IPFS, ensuring decentralized and immutable storage.
@@ -20,6 +16,7 @@ Here is the video in Hindi - [Decentralize Google Drive](https://youtu.be/fghqq3
 - **Solidity:** Smart contract development for ownership and access control.
 - **React:** Front-end interface for uploading images and managing access.
 - **IPFS:** Decentralized storage protocol for hosting uploaded images.
+- **Alchemy** Alchemy api key url is needed for deployment purpose.
 
 ## Usage
 
