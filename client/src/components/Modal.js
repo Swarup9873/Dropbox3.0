@@ -1,11 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Modal.css";
+
+
 const Modal = ({ setModalOpen, contract }) => {
+
+  const [selectedAddress, setSelectedAddress] = useState('');
+
+  const handleSelectChange = (event) => {
+    setSelectedAddress(event.target.value);
+  };
+
+
   const sharing = async () => {
     const address = document.querySelector(".address").value;
     await contract.allow(address);
     setModalOpen(false);
   };
+
+  const disAllow = async () => {
+    const address = selectedAddress;
+    await contract.disallow(address);
+    setModalOpen(false);
+  };
+
   useEffect(() => {
     const accessList = async () => {
       const addressList = await contract.shareAccess();
@@ -22,6 +39,8 @@ const Modal = ({ setModalOpen, contract }) => {
     };
     contract && accessList();
   }, [contract]);
+
+
   return (
     <>
       <div className="modalBackground">
@@ -35,9 +54,10 @@ const Modal = ({ setModalOpen, contract }) => {
             ></input>
           </div>
           <form id="myForm">
-            <select id="selectNumber">
+            <select id="selectNumber" onChange={handleSelectChange}>
               <option className="address">People With Access</option>
             </select>
+            <button onClick={() => disAllow()} disabled={!selectedAddress}>disallow</button>
           </form>
           <div className="footer">
             <button

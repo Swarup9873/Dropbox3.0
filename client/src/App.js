@@ -6,7 +6,10 @@ import Display from "./components/Display";
 import Modal from "./components/Modal";
 import "./App.css";
 
+
+
 function App() {
+
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
@@ -16,6 +19,7 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     const loadProvider = async () => {
+
       if (provider) {
         window.ethereum.on("chainChanged", () => {
           window.location.reload();
@@ -28,14 +32,14 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "Your Contract Address Here";
+        let contractAddress = "0x8EFC1D76dcB707f7C85A4107573EEC9cB85a1B90";
 
         const contract = new ethers.Contract(
           contractAddress,
           Upload.abi,
           signer
         );
-        //console.log(contract);
+        
         setContract(contract);
         setProvider(provider);
       } else {
@@ -56,7 +60,7 @@ function App() {
       )}
 
       <div className="App">
-        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
+        <h1 style={{ color: "white" }}>Dropbox3.0</h1>
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>

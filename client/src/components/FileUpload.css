@@ -18,6 +18,8 @@ input[type="file"] {
 }
 .choose:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 .textArea {
   color: white;
@@ -36,6 +38,7 @@ input[type="file"] {
   border: 1px solid #13aa52;
   background-color: #a5efc1;
   color: #ffffff;
+  cursor: pointer;
   padding: 5px 10px;
 }
 

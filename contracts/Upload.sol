@@ -16,7 +16,8 @@ contract Upload {
   function add(address _user,string memory url) external {
       value[_user].push(url);
   }
-  function allow(address user) external {//def
+  
+  function allow(address user) external {
       ownership[msg.sender][user]=true; 
       if(previousData[msg.sender][user]){
          for(uint i=0;i<accessList[msg.sender].length;i++){
@@ -47,4 +48,7 @@ contract Upload {
   function shareAccess() public view returns(Access[] memory){
       return accessList[msg.sender];
   }
+
+
+  //0x8EFC1D76dcB707f7C85A4107573EEC9cB85a1B90
 }
